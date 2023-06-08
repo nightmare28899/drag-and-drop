@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Ordenación</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <div id="blur-effect" onclick="resetGame()">
+        <div class="terminacion">
+            <h2>¡Felicidades!</h2>
+            <p>Has completado el juego.</p>
+            <p>Tu puntuación: <span id="puntuacion"></span>/10</p>
+        </div>
+    </div>
+
+    <div id="restartMenu">
+        <div class="reinicio">
+            <h2>Reiniciar</h2>
+            <div style="display: block;">
+                <a class="btn"  onclick="yes()"><strong>Si</strong></a>
+                <a class="btn"  onclick="no()"><strong>No</strong></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <a class="restart" id="reiniciar" onclick="resetGame()"><img width="70" src="/assets/images/reinicio/restart.png"></a>
+
+        <div class="contenedores">
+            <div class="contenedor number firstImg bordersContenedor" id="contenedor1"></div>
+            <div class="contenedor number secondImg bordersContenedor" id="contenedor2"></div>
+            <div class="contenedor number thirdImg bordersContenedor" id="contenedor3"></div>
+            <div class="contenedor number fourthImg bordersContenedor" id="contenedor4"></div>
+        </div>
+
+        <div class="drags">
+            <img class="drag" id="drag1" src="/assets/images/drags/img01@2x.png" alt="Elemento 2">
+            <img class="drag" id="drag2" src="/assets/images/drags/img02@2x.png" style="margin-top: 1rem;" alt="Elemento 1">
+            <img class="drag" id="drag3" src="/assets/images/drags/img03@2x.png" alt="Elemento 3">
+            <img class="drag" id="drag4" src="/assets/images/drags/img04@2x.png" alt="Elemento 4">
+        </div>
+
+        <div id="containerDrag" class="drags"></div>
+
+        <audio src="/assets/audios/correcto.m4a" id="audio1"></audio>
+        <audio src="/assets/audios/error.m4a" id="audio2"></audio>
+
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
