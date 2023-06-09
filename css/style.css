@@ -6,7 +6,9 @@ body {
 }
 
 .drags {
+  margin-top: 1rem;
   margin-bottom: 2rem;
+  justify-content: space-around;
 }
 
 .firstImg::before {
@@ -26,7 +28,6 @@ body {
 }
 
 .contenedores {
-  padding-bottom: 2rem !important;
   margin-left: 2rem;
   margin-right: 2rem;
 }
@@ -58,7 +59,7 @@ body {
 
 .container {
   text-align: center;
-  margin-top: 7rem;
+  margin-top: 1rem;
 }
 
 .number {
@@ -172,73 +173,6 @@ body {
   border-radius: 1rem;
 }
 
-/* media queries */
-@media screen and (min-width: 1024px) and (max-width: 2048px) {
-  /* Estilos para el iPad Pro en orientación horizontal */
-  .contenedor {
-    width: 230px;
-    height: 230px;
-  }
-
-  .drag {
-    width: 230px;
-    height: 230px;
-  }
-
-  .number {
-    font-size: 10rem;
-  }
-
-  .firstImg::before {
-    content: "1";
-  }
-
-  .secondImg::before {
-    content: "2";
-  }
-
-  .thirdImg::before {
-    content: "3";
-  }
-
-  .fourthImg::before {
-    content: "4";
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Estilos para el iPad en orientación horizontal */
-  .contenedor {
-    width: 230px;
-    height: 230px;
-  }
-
-  .drag {
-    width: 230px;
-    height: 230px;
-  }
-
-  .number {
-    font-size: 10rem;
-  }
-
-  .firstImg::before {
-    content: "1";
-  }
-
-  .secondImg::before {
-    content: "2";
-  }
-
-  .thirdImg::before {
-    content: "3";
-  }
-
-  .fourthImg::before {
-    content: "4";
-  }
-}
-
 #progreso {
   width: 0%;
   height: 100%;
@@ -251,4 +185,176 @@ body {
 
 .invisible {
   display: none;
+}
+
+/* media queries */
+/* Estilos para el iPad en orientación horizontal */
+@media screen and (min-width: 1024px) and (max-width: 2048px) {
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #eaeaea;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .drags {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    justify-content: space-around;
+  }
+
+  .contenedores {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .valido {
+    border: 2px solid #46fa2e !important;
+    border-radius: 1rem;
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+
+  .invalido {
+    border: 2px solid #fa2e2e !important;
+    border-radius: 1rem;
+    transition: transform 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
+
+  .restart {
+    margin-right: 58rem;
+    margin-top: 6rem;
+    border: none;
+    display: none;
+  }
+
+  .restart:hover {
+    cursor: pointer;
+  }
+
+  .container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .number {
+    text-align: center;
+    font-size: 7rem;
+    line-height: 220px;
+    color: #b6b6b6;
+    font-family: "Roboto", sans-serif;
+    font-weight: 10;
+  }
+
+  .drag {
+    display: inline-block;
+    width: 230px;
+    height: 230px;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+
+  .drag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
+
+  .contenedor {
+    display: inline-block;
+    width: 230px;
+    height: 230px;
+  }
+
+  .bordersContenedor {
+    border: 2px dashed #4d4d4d;
+    border-radius: 1rem;
+  }
+
+  .contenedor.valido {
+    border: 2px solid #4d4d4d;
+  }
+
+  .terminacion {
+    padding-top: 19rem;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    display: none;
+  }
+
+  .reinicio {
+    padding-top: 19rem;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    display: none;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    background-color: rgb(255, 136, 0);
+    padding: 1rem;
+    border-radius: 6rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .blur-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+
+  .restartMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+
+  #reiniciar {
+    margin-top: 5rem;
+  }
+
+  /* progress bar */
+  .progress-bar {
+    margin: 0 auto;
+    width: 57%;
+    height: 20px;
+    border: 1px solid #fd4c20;
+    border-radius: 10px;
+  }
+
+  #progress {
+    width: 0;
+    height: 100%;
+    background-color: #27ae60;
+    transition: width 0.5s ease-in-out;
+    border-radius: 1rem;
+  }
+
+  #progreso {
+    width: 0%;
+    height: 100%;
+    background-color: #6c63ff;
+  }
+
+  .hovered {
+    border: 2px solid #4d4d4d;
+  }
+
+  .invisible {
+    display: none;
+  }
 }

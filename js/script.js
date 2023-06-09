@@ -19,7 +19,7 @@ const dictionary = {
 };
 let arrayData = [];
 
-/* evemts */
+/* events */
 drags.forEach(function (drag) {
   drag.addEventListener("dragstart", dragStart);
   drag.addEventListener("dragend", dragEnd);
@@ -154,6 +154,9 @@ function dragDrop(e) {
     } else if (dictionary[drag.id] === "contenedor4") {
       localStorage.setItem("contenedor4", 0);
     }
+    const content = document.getElementById(e.target.id);
+    content.classList.add("invalido");
+    setTimeout(() => content.classList.remove("invalido"), 1500);
     playAudio("error.m4a");
   }
 }
@@ -201,7 +204,7 @@ function yes() {
   reinicio.style.display = "none";
   localStorage.removeItem("puntuacion");
   puntuacionActual = 0;
-
+  document.querySelector(".restart").style.display = "none";
   contenedores.forEach(function (contenedor) {
     var content = contenedor.querySelector(".drag");
     contenedor.removeChild(content);
